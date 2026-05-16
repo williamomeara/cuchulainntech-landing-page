@@ -21,12 +21,12 @@
 
 ### Products
 
-- [ ] **PROD-01**: Product cards display for all three products: Éist, Tender Match, ATU Grant Demo
-- [ ] **PROD-02**: Each card shows a status badge: Live / In Development / Coming Soon
-- [ ] **PROD-03**: Éist card links to eist.app (external, new tab)
-- [ ] **PROD-04**: Tender Match and ATU Grant Demo cards have no external links (coming soon)
+- [ ] **PROD-01**: Product cards display for all nine products, grouped into two rows: **Live** (Éist, Headlock, Theory Test Free) and **Coming Soon** (Tender Match, Grant Match, Funding Alerts, Are We There Yet, Ogma, ATU Grant Demo)
+- [ ] **PROD-02**: Each card shows a status badge: Live / Coming Soon
+- [ ] **PROD-03**: Live cards link out (new tab): Éist → eist.app, Headlock → product/install site, Theory Test Free → app store or product page
+- [ ] **PROD-04**: Coming-Soon cards have no external links; ATU Grant Demo card explicitly suppresses any link
 - [ ] **PROD-05**: Each card includes a brief one-sentence product description
-- [ ] **PROD-06**: Each card includes a product screenshot or mockup image
+- [ ] **PROD-06**: Each card includes a product screenshot, app icon, or mockup image (Coming-Soon cards may use a stylised placeholder)
 
 ### Services
 
@@ -44,8 +44,8 @@
 ### Contact
 
 - [ ] **CONT-01**: Contact section with headline inviting clients and investors to reach out
-- [ ] **CONT-02**: Primary CTA mailto link opens email client (no backend required)
-- [ ] **CONT-03**: Footer with copyright, company name, and optional social links
+- [ ] **CONT-02**: Primary CTA mailto link opens email client to `hello@cuchulainntech.ie` (no backend required)
+- [ ] **CONT-03**: Footer renders legal identity — `© 2026 Cú Chulainn Tech Limited · CRO 812722 · Ireland` — plus optional social icon links
 
 ### Launch Readiness
 

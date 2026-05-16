@@ -17,7 +17,9 @@ A potential client or investor lands on the page and immediately understands wha
 ### Active
 
 - [ ] Hero section introducing Cuchulainn Tech — who we are, what we do, Irish identity + startup energy
-- [ ] Products showcase: Éist (live, links to eist.app), Tender Match (in development / coming soon), ATU Grant Demo (in progress / coming soon — no direct link)
+- [ ] Products showcase, two groups:
+  - **Live**: Éist (links to eist.app), Headlock (links to install/site), Theory Test Free (links to app)
+  - **Coming Soon**: Tender Match, Grant Match, Funding Alerts, Are We There Yet, Ogma, ATU Grant Demo (no link)
 - [ ] Services section — custom app development, hire us CTA
 - [ ] About / team section — founder + collaborators
 - [ ] Contact / get in touch CTA for clients and investors
@@ -32,11 +34,22 @@ A potential client or investor lands on the page and immediately understands wha
 
 ## Context
 
-- **Company**: Cuchulainn Tech — Irish software company
+- **Company**: Cuchulainn Tech — Irish software company. Legal name **CÚ CHULAINN TECH LIMITED** (CRO 812722, incorporated 02/04/2026, registered in Westmeath, Ireland)
+- **Canonical domain**: `cuchulainntech.ie` (also owns `cuchulainntech.com`, which 301-redirects to `.ie`)
+- **Contact email**: `hello@cuchulainntech.ie` (Purelymail)
+- **Hosting**: Vercel · **DNS**: Cloudflare · **Analytics**: Vercel Web Analytics · See `.planning/DEPLOYMENT.md`
 - **Products**:
-  - **Éist** — Flutter audiobook app, live at eist.app
-  - **Tender Match** — Research grant matching system, in development
-  - **ATU Grant Demo** — Demo built for a public tender application; if won, becomes a contracted project or SaaS product. Show as "in progress / coming soon" only.
+  - **Live**:
+    - **Éist** — Flutter audiobook app, live at eist.app
+    - **Headlock** — CLI tool to squeeze extra prompts out of AI subscriptions; published via homebrew tap
+    - **Theory Test Free** — Free Irish driver theory test mobile app (Flutter) with web landing and Supabase backend
+  - **In Development / Coming Soon**:
+    - **Tender Match** — Public-tender matching system
+    - **Grant Match** — Research-grant matching system
+    - **Funding Alerts** — Notifications for new funding opportunities
+    - **Are We There Yet** — Flutter alarm app that wakes you near your stop on trains/buses
+    - **Ogma** — Forthcoming product (named for the Celtic god of eloquence and language)
+    - **ATU Grant Demo** — Demo built for a public tender application; if won, becomes a contracted project or SaaS product. Show as "coming soon" only — no external link
 - **Audience**: Potential clients (hire us to build apps) and investors/partners
 - **Vibe**: Irish cultural identity (Cuchulainn mythology, Celtic feel) + startup energy (ambitious, forward-looking) — aesthetic close to Linear/Vercel (dark, minimal, sharp typography)
 - **Tech approach**: Open to cutting-edge stack — Next.js 15 + Tailwind CSS v4 is the natural fit (App Router, RSC, fast static with Vercel deploy)
