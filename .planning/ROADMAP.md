@@ -12,7 +12,7 @@ Four phases take the project from an empty repo to a live, polished marketing si
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation** - Scaffold, design tokens, dark mode (no FOUC), Geist font, NavBar/Footer shells, Vercel deploy
+- [x] **Phase 1: Foundation** - Scaffold, design tokens, dark mode (no FOUC), Geist font, NavBar/Footer shells, Vercel deploy
 - [ ] **Phase 2: Core Content** - Hero and Products showcase — the primary conversion surfaces
 - [ ] **Phase 3: Trust & Contact** - Services, About/Team, Contact section, and Footer content
 - [ ] **Phase 4: Polish & Launch** - OG metadata, sitemap, robots.txt, contrast audit, mobile verification
@@ -28,7 +28,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. Geist font renders in the browser — no fallback or system font visible
   3. NavBar is visible and fixed at the top across all viewport widths
   4. Tailwind v4 color tokens are defined in `globals.css` and resolve correctly in the browser
-**Plans**: TBD
+**Plans**: 2026-05-16-phase-1-foundation.md ✅
 **UI hint**: yes
 
 ### Phase 2: Core Content
@@ -75,7 +75,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/TBD | Not started | - |
+| 1. Foundation | 1/1 | Completed | 2026-05-16 |
 | 2. Core Content | 0/TBD | Not started | - |
 | 3. Trust & Contact | 0/TBD | Not started | - |
 | 4. Polish & Launch | 0/TBD | Not started | - |
