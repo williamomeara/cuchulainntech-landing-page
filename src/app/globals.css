@@ -1,26 +1,62 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@theme {
+  /* Surfaces */
+  --color-bg:         #0a0a0a;
+  --color-bg-up:      #111111;
+  --color-bg-card:    #101010;
+
+  /* Brand accent — Celtic green */
+  --color-accent:        oklch(0.72 0.18 145);
+  --color-accent-faint:  oklch(0.72 0.18 145 / 0.10);
+  --color-accent-rim:    oklch(0.72 0.18 145 / 0.28);
+  --color-accent-pill:   oklch(0.80 0.14 145);
+
+  /* Text */
+  --color-text:       #efefef;
+  --color-text-muted: #888888;
+  --color-text-faint: #3d3d3d;
+
+  /* Borders */
+  --color-border:    rgba(255, 255, 255, 0.07);
+  --color-border-hi: rgba(255, 255, 255, 0.14);
+
+  /* Radii */
+  --radius-card: 14px;
+
+  /* Typography (wired in Task 4 via next/font CSS variables) */
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), "SF Mono", monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* Reset and base */
+*, *::before, *::after { box-sizing: border-box; }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
+
+/* Subtle dot-grid texture, fixed behind content */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.032) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+button { font-family: inherit; cursor: pointer; }
