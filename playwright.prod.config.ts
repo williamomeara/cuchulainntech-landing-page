@@ -7,7 +7,7 @@ export default defineConfig({
   retries: 1,
   reporter: "list",
   use: {
-    baseURL: "https://cuchulainntechlandingpage.vercel.app",
+    baseURL: "https://cuchulainntech.ie",
     trace: "retain-on-failure",
   },
   projects: [

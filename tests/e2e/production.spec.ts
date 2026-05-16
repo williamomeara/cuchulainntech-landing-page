@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-const PROD_URL = "https://cuchulainntechlandingpage.vercel.app";
+const PROD_URL = "https://cuchulainntech.ie";
 
 test.describe("Production deploy — Phase 1 verification", () => {
   test.use({ baseURL: PROD_URL });
