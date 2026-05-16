@@ -3,10 +3,10 @@
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 @theme {
-  /* Surfaces */
-  --color-bg:         #0a0a0a;
-  --color-bg-up:      #111111;
-  --color-bg-card:    #101010;
+  /* Surfaces — names match shadcn/ui vocabulary so future components fit. */
+  --color-background:      #0a0a0a;
+  --color-background-up:   #111111;
+  --color-card:            #101010;
 
   /* Brand accent — Celtic green */
   --color-accent:        oklch(0.72 0.18 145);
@@ -15,9 +15,9 @@
   --color-accent-pill:   oklch(0.80 0.14 145);
 
   /* Text */
-  --color-text:       #efefef;
-  --color-text-muted: #888888;
-  --color-text-faint: #3d3d3d;
+  --color-foreground:        #efefef;
+  --color-muted-foreground:  #888888;
+  --color-foreground-faint:  #3d3d3d;
 
   /* Borders */
   --color-border:    rgba(255, 255, 255, 0.07);
@@ -26,19 +26,22 @@
   /* Radii */
   --radius-card: 14px;
 
-  /* Typography (wired in Task 4 via next/font CSS variables) */
+  /* Typography (Geist CSS variables emitted by next/font in layout.tsx) */
   --font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
-  --font-mono: var(--font-geist-mono), "SF Mono", monospace;
+  --font-mono: var(--font-geist-mono), "SF Mono", Menlo, Monaco, "Cascadia Mono", "Courier New", monospace;
 }
 
 /* Reset and base */
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+/* Respect prefers-reduced-motion — never force smooth scroll on opt-out. */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
 
 body {
-  background: var(--color-bg);
-  color: var(--color-text);
+  background: var(--color-background);
+  color: var(--color-foreground);
   font-family: var(--font-sans);
   font-size: 16px;
   line-height: 1.6;
@@ -46,7 +49,8 @@ body {
   overflow-x: hidden;
 }
 
-/* Subtle dot-grid texture, fixed behind content */
+/* Subtle dot-grid texture, fixed behind content. Sections are expected to
+   set position: relative + z-index >= 1 to render above this layer. */
 body::after {
   content: "";
   position: fixed;
@@ -60,3 +64,11 @@ body::after {
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 button { font-family: inherit; cursor: pointer; }
+
+/* Keyboard focus ring fallback — shadcn primitives ship their own styles
+   in Phase 2, but raw <a>/<button> need a visible focus indicator now. */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
