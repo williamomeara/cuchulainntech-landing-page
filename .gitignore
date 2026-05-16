@@ -46,3 +46,6 @@ next-env.d.ts
 /test-results
 /playwright-report
 /playwright/.cache
+
+# design handoff zip (extracted directory is tracked instead)
+design/claude-design-handoff/handoff.zip
