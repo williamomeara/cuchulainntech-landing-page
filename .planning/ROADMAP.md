@@ -13,7 +13,7 @@ Four phases take the project from an empty repo to a live, polished marketing si
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation** - Scaffold, design tokens, dark mode (no FOUC), Geist font, NavBar/Footer shells, Vercel deploy
-- [ ] **Phase 2: Core Content** - Hero and Products showcase — the primary conversion surfaces
+- [x] **Phase 2: Core Content** - Hero and Products showcase — the primary conversion surfaces
 - [ ] **Phase 3: Trust & Contact** - Services, About/Team, Contact section, and Footer content
 - [ ] **Phase 4: Polish & Launch** - OG metadata, sitemap, robots.txt, contrast audit, mobile verification
 
@@ -38,10 +38,11 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Success Criteria** (what must be TRUE):
   1. Hero headline leads with value (not company description) and the primary CTA button is visible above the fold on both desktop and mobile
   2. Clicking the Hero CTA scrolls to the contact section
-  3. All three product cards (Éist, Tender Match, ATU Grant Demo) are visible with correct status badges
-  4. Éist card links to eist.app in a new tab; Tender Match and ATU Grant Demo cards have no external links
-  5. Each product card shows a one-sentence description and a screenshot or mockup image
-**Plans**: TBD
+  3. All nine product cards (3 LIVE: Éist, Headlock, Theory Test Free; 6 COMING SOON: Tender Match, Grant Match, Funding Alerts, Are We There Yet, Ogma, Student Placement Organiser) are visible with correct status badges
+  4. LIVE cards link out in a new tab (Éist → eist.app, Headlock → headlock.app, Theory Test Free → its app page); COMING SOON cards have no external link
+  5. Each product card shows a one-sentence description and either a real screenshot or an intentional Coming-Soon placeholder treatment
+  6. A compact "Open Source" strip surfaces blindfold-env and Craobh as GitHub links
+**Plans**: 2026-05-16-phase-2-core-content.md ✅
 **UI hint**: yes
 
 ### Phase 3: Trust & Contact
@@ -76,6 +77,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 1/1 | Completed | 2026-05-16 |
-| 2. Core Content | 0/TBD | Not started | - |
+| 2. Core Content | 1/1 | Completed | 2026-05-16 |
 | 3. Trust & Contact | 0/TBD | Not started | - |
 | 4. Polish & Launch | 0/TBD | Not started | - |
