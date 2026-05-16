@@ -45,7 +45,92 @@ test.describe("Phase 1 foundation", () => {
 
   test("clicking 'Get in Touch' scrolls to #contact", async ({ page }) => {
     await page.goto("/");
-    await page.getByRole("link", { name: "Get in Touch" }).click();
+    // Phase 2 adds a hero CTA with the same accessible name; scope to the
+    // site header so this test stays unambiguous.
+    await page
+      .getByTestId("site-header")
+      .getByRole("link", { name: "Get in Touch" })
+      .click();
     await expect(page).toHaveURL(/#contact$/);
+  });
+});
+
+test.describe("Phase 2 hero + products", () => {
+  test("hero CTA is visible above the fold on mobile (iPhone 14 Pro)", async ({
+    page,
+  }, testInfo) => {
+    test.skip(
+      !testInfo.project.name.includes("mobile"),
+      "Above-fold check is mobile-specific",
+    );
+    await page.goto("/");
+    const cta = page.getByTestId("hero-cta");
+    await expect(cta).toBeVisible();
+    const box = await cta.boundingBox();
+    // 393x852 viewport → CTA must sit above y=852 without scrolling.
+    expect(box?.y).toBeDefined();
+    expect((box?.y ?? Infinity) + (box?.height ?? 0)).toBeLessThan(852);
+  });
+
+  test("hero stat reflects the product list", async ({ page }) => {
+    await page.goto("/");
+    await expect(page.getByText(/shipped \d+ products · building \d+ more/)).toBeVisible();
+  });
+
+  test("all nine product cards render with correct status badges", async ({
+    page,
+  }) => {
+    await page.goto("/");
+    const liveBadges = page.locator('[data-status="live"]');
+    const soonBadges = page.locator('[data-status="coming-soon"]');
+    await expect(liveBadges).toHaveCount(3);
+    await expect(soonBadges).toHaveCount(6);
+  });
+
+  test("Éist card is an external link to eist.app", async ({ page }) => {
+    await page.goto("/");
+    const card = page.getByTestId("product-card-eist");
+    await expect(card).toHaveAttribute("href", "https://eist.app");
+    await expect(card).toHaveAttribute("target", "_blank");
+    await expect(card).toHaveAttribute("rel", /noopener/);
+  });
+
+  test("Coming-Soon cards are not anchors", async ({ page }) => {
+    await page.goto("/");
+    for (const id of [
+      "tender-match",
+      "grant-match",
+      "funding-alerts",
+      "are-we-there-yet",
+      "ogma",
+      "student-placement",
+    ]) {
+      const card = page.getByTestId(`product-card-${id}`);
+      await expect(card).toBeVisible();
+      await expect(card).not.toHaveAttribute("href", /.*/);
+    }
+  });
+
+  test("hero CTA scrolls to contact", async ({ page }) => {
+    await page.goto("/");
+    await page.getByTestId("hero-cta").click();
+    await expect(page).toHaveURL(/#contact$/);
+  });
+
+  test("OSS strip surfaces blindfold-env and craobh as github links", async ({
+    page,
+  }) => {
+    await page.goto("/");
+    const blindfold = page.getByTestId("oss-card-blindfold-env");
+    const craobh = page.getByTestId("oss-card-craobh");
+    await expect(blindfold).toHaveAttribute(
+      "href",
+      "https://github.com/williamomeara/blindfold-env",
+    );
+    await expect(blindfold).toHaveAttribute("target", "_blank");
+    await expect(craobh).toHaveAttribute(
+      "href",
+      "https://github.com/williamomeara/craobh",
+    );
   });
 });
