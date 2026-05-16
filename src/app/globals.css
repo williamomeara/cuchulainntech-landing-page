@@ -73,3 +73,13 @@ button { font-family: inherit; cursor: pointer; }
   outline-offset: 2px;
   border-radius: 2px;
 }
+
+/* Hero ambient orb — slow Celtic-green pulse behind the H1. */
+@keyframes orb-pulse {
+  0%, 100% { opacity: 0.55; transform: translate(-50%, -50%) scale(1); }
+  50%      { opacity: 0.85; transform: translate(-50%, -50%) scale(1.06); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-orb { animation: none !important; }
+}
