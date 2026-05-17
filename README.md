@@ -2,9 +2,10 @@
 
 The marketing site for Cú Chulainn Tech Limited (CRO 812722).
 
-- **Stack:** Next.js 15 (App Router, static export), Tailwind v4, next-themes, Geist
-- **Hosting:** Vercel
-- **DNS:** Cloudflare → `cuchulainntech.ie` (canonical), `cuchulainntech.com` (301 → .ie)
+- **Stack:** Next.js 16 (App Router, static export), Tailwind v4, next-themes, Geist
+- **Hosting:** Vercel · **Analytics:** Vercel Web Analytics
+- **DNS:** Cloudflare → `cuchulainntech.ie` (canonical), `cuchulainntech.com` (308 → .ie)
+- **Email:** Purelymail, `hello@cuchulainntech.ie`
 - **Project docs:** see `.planning/`
 - **Design handoff:** see `design/`
 

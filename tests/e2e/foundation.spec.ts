@@ -117,12 +117,13 @@ test.describe("Phase 2 hero + products", () => {
     await expect(page).toHaveURL(/#contact$/);
   });
 
-  test("OSS strip surfaces blindfold-env and craobh as github links", async ({
+  test("OSS strip surfaces the three OSS projects as github links", async ({
     page,
   }) => {
     await page.goto("/");
     const blindfold = page.getByTestId("oss-card-blindfold-env");
     const craobh = page.getByTestId("oss-card-craobh");
+    const didIDoGood = page.getByTestId("oss-card-did-i-do-good");
     await expect(blindfold).toHaveAttribute(
       "href",
       "https://github.com/williamomeara/blindfold-env",
@@ -131,6 +132,10 @@ test.describe("Phase 2 hero + products", () => {
     await expect(craobh).toHaveAttribute(
       "href",
       "https://github.com/williamomeara/craobh",
+    );
+    await expect(didIDoGood).toHaveAttribute(
+      "href",
+      "https://github.com/williamomeara/did-i-do-good",
     );
   });
 });

@@ -58,8 +58,8 @@ export const PRODUCTS: readonly Product[] = [
     status: "coming-soon",
     description: "Smarter matching for Irish public tenders.",
     image: {
-      src: "/products/tender-match/landing.png",
-      alt: "Tender Match landing page screenshot",
+      src: "/products/tender-match/ai-placeholder.png",
+      alt: "Abstract network graph evoking tender matching",
     },
   },
   {
@@ -67,14 +67,20 @@ export const PRODUCTS: readonly Product[] = [
     name: "Grant Match",
     status: "coming-soon",
     description: "Research grants, matched to your project.",
-    accentTone: "warm",
+    image: {
+      src: "/products/grant-match/ai-placeholder.png",
+      alt: "Constellation of connected nodes evoking grant matching",
+    },
   },
   {
     id: "funding-alerts",
     name: "Funding Alerts",
     status: "coming-soon",
     description: "Notifications the moment new funding opens.",
-    accentTone: "cool",
+    image: {
+      src: "/products/funding-alerts/ai-placeholder.png",
+      alt: "A glowing emerald dot pulsing concentric ripples",
+    },
   },
   {
     id: "are-we-there-yet",
@@ -82,8 +88,8 @@ export const PRODUCTS: readonly Product[] = [
     status: "coming-soon",
     description: "Sleep on the bus. We'll wake you at your stop.",
     image: {
-      src: "/products/are-we-there-yet/icon-1024.png",
-      alt: "Are We There Yet app icon",
+      src: "/products/are-we-there-yet/ai-placeholder.png",
+      alt: "Empty seat on a night bus with soft overhead light",
     },
   },
   {
@@ -92,8 +98,8 @@ export const PRODUCTS: readonly Product[] = [
     status: "coming-soon",
     description: "Something new from the workshop. Stay tuned.",
     image: {
-      src: "/products/ogma/library.png",
-      alt: "Ogma library screen",
+      src: "/products/ogma/ai-placeholder.png",
+      alt: "Celtic Ogham-inspired ornamental motif in emerald green",
     },
   },
   {
@@ -101,7 +107,9 @@ export const PRODUCTS: readonly Product[] = [
     name: "Student Placement Organiser",
     status: "coming-soon",
     description: "Matching students to industry placements, end-to-end.",
-    accentTone: "default",
-    // no image — intentional teaser (and the underlying ATU tender stays unbranded)
+    image: {
+      src: "/products/student-placement/ai-placeholder.png",
+      alt: "Two columns of luminous tiles connected by faint diagonal lines",
+    },
   },
 ] as const;

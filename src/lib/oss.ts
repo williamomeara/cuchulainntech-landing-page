@@ -20,6 +20,11 @@ export const OSS_PROJECTS: readonly OssProject[] = [
       "Searchable family tree of Ireland, built from public historical records.",
     href: "https://github.com/williamomeara/craobh",
   },
-  // did-i-do-good lives locally only at this writing; add it here once the
-  // repo is pushed to github.com/williamomeara/did-i-do-good.
+  {
+    id: "did-i-do-good",
+    name: "did-i-do-good",
+    description:
+      "MCP server: GitHub Copilot adversarially reviews Claude's plans.",
+    href: "https://github.com/williamomeara/did-i-do-good",
+  },
 ] as const;
