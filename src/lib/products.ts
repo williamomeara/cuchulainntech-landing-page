@@ -50,13 +50,22 @@ export const PRODUCTS: readonly Product[] = [
       alt: "Theory Test Free app icon",
     },
   },
+  {
+    id: "every-company-ever",
+    name: "Every Company Ever",
+    status: "live",
+    description: "Every Irish registered company, in one open directory.",
+    href: "https://everycompanyever.ie",
+    accentTone: "cool",
+  },
 
   // ─── COMING SOON ─────────────────────────────────────────────────────
   {
     id: "tender-match",
     name: "Tender Match",
-    status: "coming-soon",
+    status: "live",
     description: "Smarter matching for Irish public tenders.",
+    href: "https://tendermatch.ie",
     image: {
       src: "/products/tender-match/ai-placeholder.png",
       alt: "Abstract network graph evoking tender matching",

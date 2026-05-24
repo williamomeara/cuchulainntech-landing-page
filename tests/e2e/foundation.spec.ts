@@ -83,8 +83,8 @@ test.describe("Phase 2 hero + products", () => {
     await page.goto("/");
     const liveBadges = page.locator('[data-status="live"]');
     const soonBadges = page.locator('[data-status="coming-soon"]');
-    await expect(liveBadges).toHaveCount(3);
-    await expect(soonBadges).toHaveCount(6);
+    await expect(liveBadges).toHaveCount(5);
+    await expect(soonBadges).toHaveCount(4);
   });
 
   test("Éist card is an external link to eist.app", async ({ page }) => {
@@ -95,10 +95,22 @@ test.describe("Phase 2 hero + products", () => {
     await expect(card).toHaveAttribute("rel", /noopener/);
   });
 
+  test("newly-live cards link out to their sites", async ({ page }) => {
+    await page.goto("/");
+    const expected: Record<string, string> = {
+      "every-company-ever": "https://everycompanyever.ie",
+      "tender-match": "https://tendermatch.ie",
+    };
+    for (const [id, href] of Object.entries(expected)) {
+      const card = page.getByTestId(`product-card-${id}`);
+      await expect(card).toHaveAttribute("href", href);
+      await expect(card).toHaveAttribute("target", "_blank");
+    }
+  });
+
   test("Coming-Soon cards are not anchors", async ({ page }) => {
     await page.goto("/");
     for (const id of [
-      "tender-match",
       "grant-match",
       "funding-alerts",
       "are-we-there-yet",
