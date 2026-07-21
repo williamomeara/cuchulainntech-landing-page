@@ -18,6 +18,14 @@ export type Product = {
 export const PRODUCTS: readonly Product[] = [
   // ─── LIVE ────────────────────────────────────────────────────────────
   {
+    id: "carspark",
+    name: "CarSpark",
+    status: "live",
+    description: "QR-code parking payments — no app, no meter.",
+    href: "https://carspark.app",
+    accentTone: "cool",
+  },
+  {
     id: "eist",
     name: "Éist",
     status: "live",
